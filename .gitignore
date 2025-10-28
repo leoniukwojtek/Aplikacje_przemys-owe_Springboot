@@ -1,0 +1,55 @@
+# Systemowe pliki ignorowane
+.DS_Store               # Pliki systemowe dla macOS
+Thumbs.db               # Pliki systemowe dla Windows
+
+# Pliki i katalogi specyficzne dla IDE
+.idea/                  # IntelliJ IDEA
+.vscode/                # Visual Studio Code
+*.iml                   # Pliki projektu IntelliJ IDEA
+*.classpath             # Pliki konfiguracji Eclipse
+*.project               # Pliki konfiguracji Eclipse
+.settings/              # Eclipse settings
+
+# Katalogi i pliki Spring Boot
+target/                 # Katalog kompilacji Maven (np. pliki .jar, .war)
+out/                    # Katalog kompilacji IntelliJ IDEA (jeśli używasz IntelliJ IDEA)
+*.log                   # Pliki logów (np. application.log)
+
+# Ignorowanie pliku "notatki.txt"
+notatki.txt             # Ignorowanie konkretnego pliku
+
+# Pliki konfiguracyjne Maven
+.mvn/                   # Katalog Maven wrapper
+pom.xml.tag             # Pliki tagów POM Maven
+
+# Pliki konfiguracyjne Gradle (jeśli używasz Gradle zamiast Maven)
+.gradle/                # Katalog Gradle
+build/                  # Katalog build w Gradle
+
+# Pliki przechowujące dane bazy danych (np. h2)
+*.h2.db                 # Przykład dla bazy H2
+*.db                    # Przykład dla plików baz danych w ogóle
+
+# Cache, pliki tymczasowe i pliki kompensacyjne
+*.swp                   # Pliki tymczasowe VIM
+*.swo                   # Pliki tymczasowe VIM
+*~                      # Pliki tymczasowe edytorów
+
+# Pliki z wyjściami kompilacji
+*.class                 # Pliki .class wygenerowane przez Javę
+*.jar                   # Pliki .jar (Java Archive)
+*.war                   # Pliki .war (Web Application Archive)
+
+# Pliki dla aplikacji testowych
+*.test                  # Pliki testów, jeśli używasz jakiegoś frameworka testowego
+
+# Logi aplikacji
+log/                    # Katalog logów
+*.log                   # Pliki logów aplikacji
+
+# Pliki generowane przez Spring Boot podczas uruchamiania
+*.pid                   # Plik procesu
+*.out                   # Plik standardowego wyjścia
+
+# Pliki generowane przez Spring Boot w czasie działania aplikacji
+*.properties            # Jeśli masz lokalne pliki .properties (właściwości)

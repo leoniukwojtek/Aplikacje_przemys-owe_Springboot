@@ -1,0 +1,19 @@
+firstName,lastName,email,company,position,salary
+Anna,Kowalska,anna.kowalska@example.com,TechCorp,,8000
+Jan,Nowak,jan.nowak@example.com,FinGroup,Manager,12000
+Maria,Zielińska,maria.zielinska@example.com,HealthPlus,Intern,3000
+Tomasz,Wójcik,tomasz.wojcik@example.com,TechCorp,President,25000
+Ewa,Majewska,ewa.majewska@example.com,FinGroup,Developer,8000
+Piotr,Grabowski,piotr.grabowski@example.com,HealthPlus,Manager,12000
+Katarzyna,Wiśniewska,katarzyna.wisniewska@example.com,TechCorp,Intern,3000
+Michał,Dąbrowski,michal.dabrowski@example.com,FinGroup,Vice President,18000
+Joanna,Król,joanna.krol@example.com,HealthPlus,Developer,8000
+Paweł,Adamski,pawel.adamski@example.com,TechCorp,Manager,12000
+Agnieszka,Szymańska,agnieszka.szymanska@example.com,FinGroup,Intern,3000
+Rafał,Kaczmarek,rafal.kaczmarek@example.com,HealthPlus,Vice President,18000
+Natalia,Nowicka,natalia.nowicka@example.com,TechCorp,Developer,8000
+Grzegorz,Lis,grzegorz.lis@example.com,FinGroup,President,25000
+Monika,Wrona,monika.wrona@example.com,HealthPlus,Manager,12000
+Sebastian,Malinowski,sebastian.malinowski@example.com,TechCorp,CEO,30000
+Izabela,Baran,izabela.baran@example.com,FinGroup,CFO,22000
+Łukasz,Urban,lukasz.urban@example.com,HealthPlus,Consultant,15000

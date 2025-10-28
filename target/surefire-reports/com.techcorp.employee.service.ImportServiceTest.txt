@@ -1,0 +1,74 @@
+-------------------------------------------------------------------------------
+Test set: com.techcorp.employee.service.ImportServiceTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 0.064 s <<< FAILURE! -- in com.techcorp.employee.service.ImportServiceTest
+com.techcorp.employee.service.ImportServiceTest.testImportSkipsHeaderLine -- Time elapsed: 0.021 s <<< ERROR!
+java.lang.NullPointerException
+	at java.base/java.io.Reader.<init>(Reader.java:168)
+	at java.base/java.io.InputStreamReader.<init>(InputStreamReader.java:76)
+	at com.techcorp.employee.service.ImportService.importFromCsv(ImportService.java:38)
+	at com.techcorp.employee.service.ImportServiceTest.testImportSkipsHeaderLine(ImportServiceTest.java:140)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.techcorp.employee.service.ImportServiceTest.testImportValidSingleEmployeeHasNoErrors -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.NullPointerException
+	at java.base/java.io.Reader.<init>(Reader.java:168)
+	at java.base/java.io.InputStreamReader.<init>(InputStreamReader.java:76)
+	at com.techcorp.employee.service.ImportService.importFromCsv(ImportService.java:38)
+	at com.techcorp.employee.service.ImportServiceTest.testImportValidSingleEmployeeHasNoErrors(ImportServiceTest.java:62)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.techcorp.employee.service.ImportServiceTest.testImportValidSingleEmployeeCountIsOne -- Time elapsed: 0.007 s <<< ERROR!
+java.lang.NullPointerException
+	at java.base/java.io.Reader.<init>(Reader.java:168)
+	at java.base/java.io.InputStreamReader.<init>(InputStreamReader.java:76)
+	at com.techcorp.employee.service.ImportService.importFromCsv(ImportService.java:38)
+	at com.techcorp.employee.service.ImportServiceTest.testImportValidSingleEmployeeCountIsOne(ImportServiceTest.java:46)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.techcorp.employee.service.ImportServiceTest.testImportUnknownJobTitleAddsError -- Time elapsed: 0.007 s <<< ERROR!
+java.lang.NullPointerException
+	at java.base/java.io.Reader.<init>(Reader.java:168)
+	at java.base/java.io.InputStreamReader.<init>(InputStreamReader.java:76)
+	at com.techcorp.employee.service.ImportService.importFromCsv(ImportService.java:38)
+	at com.techcorp.employee.service.ImportServiceTest.testImportUnknownJobTitleAddsError(ImportServiceTest.java:95)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.techcorp.employee.service.ImportServiceTest.testImportInvalidFieldCountAddsError -- Time elapsed: 0.007 s <<< ERROR!
+java.lang.NullPointerException
+	at java.base/java.io.Reader.<init>(Reader.java:168)
+	at java.base/java.io.InputStreamReader.<init>(InputStreamReader.java:76)
+	at com.techcorp.employee.service.ImportService.importFromCsv(ImportService.java:38)
+	at com.techcorp.employee.service.ImportServiceTest.testImportInvalidFieldCountAddsError(ImportServiceTest.java:78)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.techcorp.employee.service.ImportServiceTest.testImportFileNotFoundAddsError -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.NullPointerException
+	at java.base/java.io.Reader.<init>(Reader.java:168)
+	at java.base/java.io.InputStreamReader.<init>(InputStreamReader.java:76)
+	at com.techcorp.employee.service.ImportService.importFromCsv(ImportService.java:38)
+	at com.techcorp.employee.service.ImportServiceTest.testImportFileNotFoundAddsError(ImportServiceTest.java:107)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.techcorp.employee.service.ImportServiceTest.testImportSkipsEmptyLine -- Time elapsed: 0.007 s <<< ERROR!
+java.lang.NullPointerException
+	at java.base/java.io.Reader.<init>(Reader.java:168)
+	at java.base/java.io.InputStreamReader.<init>(InputStreamReader.java:76)
+	at com.techcorp.employee.service.ImportService.importFromCsv(ImportService.java:38)
+	at com.techcorp.employee.service.ImportServiceTest.testImportSkipsEmptyLine(ImportServiceTest.java:125)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+

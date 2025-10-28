@@ -1,0 +1,8 @@
+przebudowa: mvn clean package
+
+uruchamianie: mvn spring-boot:run
+
+przebudowa bez testów: mvn install -DskipTests
+
+
+uruchamianie:  mvn test

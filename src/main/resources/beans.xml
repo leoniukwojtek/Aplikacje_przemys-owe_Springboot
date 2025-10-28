@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="employee1" class="com.techcorp.employee.model.Employee">
+        <constructor-arg type="java.lang.String" value="Jan"/>
+        <constructor-arg type="java.lang.String" value="Kowalski"/>
+        <constructor-arg type="java.lang.String" value="jan.kowalski@techcorp.com"/>
+        <constructor-arg type="java.lang.String" value="TechCorp"/>
+        <constructor-arg type="java.lang.String" value="MANAGER"/>
+        <constructor-arg value="12500"/>
+    </bean>
+
+    <bean id="employee2" class="com.techcorp.employee.model.Employee">
+        <constructor-arg type="java.lang.String" value="Anna"/>
+        <constructor-arg type="java.lang.String" value="Nowak"/>
+        <constructor-arg type="java.lang.String" value="anna.nowak@techcorp.com"/>
+        <constructor-arg type="java.lang.String" value="TechCorp"/>
+        <constructor-arg type="java.lang.String" value="DEVELOPER"/>
+        <constructor-arg value="8500"/>
+    </bean>
+
+    <!-- Definicja listy pracowników -->
+    <util:list id="xmlEmployees" value-type="com.techcorp.employee.model.Employee">
+        <ref bean="employee1"/>
+        <ref bean="employee2"/>
+    </util:list>
+
+</beans>
