@@ -1,8 +1,1 @@
-com\techcorp\employee\service\JobTitleTest.class
-com\techcorp\employee\service\ApiServiceTest.class
-com\techcorp\employee\service\ImportSummaryTest.class
-com\techcorp\employee\service\EmployeeServiceTest.class
-com\techcorp\employee\service\EmailSetTest.class
-com\techcorp\employee\service\ImportServiceTest.class
-com\techcorp\employee\service\EmployeeTest.class
-com\techcorp\employee\service\CompanyStatisticsTest.class
+com\techcorp\employee\controller\EmployeeControllerTest.class

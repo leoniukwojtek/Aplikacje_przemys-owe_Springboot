@@ -68,16 +68,6 @@ public class StartupRunner implements CommandLineRunner {
             System.out.println("❌ Błąd podczas pobierania danych z API: " + e.getMessage());
         }
 
-        //  Walidacja niespójnych wynagrodzeń
-        List<Employee> inconsistentSalaries = employeeService.validateSalaryConsistency();
-        System.out.println("\n⚠️ Pracownicy z niespójnym wynagrodzeniem:");
-        if (inconsistentSalaries.isEmpty()) {
-            System.out.println("Brak niespójności.");
-        } else {
-            inconsistentSalaries.forEach(emp ->
-                    System.out.println(emp.getFirstName() + " " + emp.getLastName() +
-                            " (" + emp.getJobTitle() + ") - " + emp.getSalary()));
-        }
 
         //  Statystyki firmowe
         Map<String, CompanyStatistics> statsMap = employeeService.getCompanyStatistics();

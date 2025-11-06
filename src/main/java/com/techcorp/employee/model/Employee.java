@@ -3,7 +3,6 @@ package com.techcorp.employee.model;
 import com.techcorp.employee.exception.InvalidDataException;
 import java.util.Comparator;
 import java.util.Objects;
-import com.techcorp.employee.model.JobTitle;
 
 public class Employee {
 
@@ -13,8 +12,9 @@ public class Employee {
     private String companyName;
     private String jobTitle;
     private double salary;
+    private EmploymentStatus status;
 
-    // Konstruktor wykorzystywany np. przy tworzeniu beanów z XML
+    // Konstruktor
     public Employee(String firstName, String lastName, String emailAddress,
                     String companyName, String jobTitle, double salary) {
         this.firstName = firstName;
@@ -23,9 +23,10 @@ public class Employee {
         this.companyName = companyName;
         this.jobTitle = jobTitle;
         this.salary = salary;
+        this.status = EmploymentStatus.ACTIVE; // default
     }
 
-    // Walidacja przeniesiona do serwisu (np. EmployeeService)
+    // Walidacja
     public void validate() throws InvalidDataException {
         if (firstName == null || firstName.isBlank()) throw new InvalidDataException("Imię nie może być puste.");
         if (lastName == null || lastName.isBlank()) throw new InvalidDataException("Nazwisko nie może być puste.");
@@ -41,20 +42,21 @@ public class Employee {
     public String getCompanyName() { return companyName; }
     public String getJobTitle() { return jobTitle; }
     public double getSalary() { return salary; }
+    public EmploymentStatus getStatus() { return status; }
 
     public void setSalary(double salary) { this.salary = salary; }
+    public void setStatus(EmploymentStatus status) { this.status = status; }
 
     @Override
-    public String toString() {
-        return firstName + " " + lastName;
-    }
+    public String toString() { return firstName + " " + lastName; }
 
     public String showFullDetails() {
         return "Name: " + firstName + " " + lastName + "\n" +
                 "Email: " + emailAddress + "\n" +
                 "Company: " + companyName + "\n" +
                 "Job Title: " + jobTitle + "\n" +
-                "Salary: " + salary;
+                "Salary: " + salary + "\n" +
+                "Status: " + status;
     }
 
     @Override
@@ -66,17 +68,13 @@ public class Employee {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(emailAddress);
-    }
+    public int hashCode() { return Objects.hash(emailAddress); }
 
-    // Comparator po nazwisku
     public static Comparator<Employee> getAlphabeticalComparator() {
         return Comparator.comparing(Employee::getLastName)
                 .thenComparing(Employee::getFirstName);
     }
 
-    // Comparator po pensji
     public static Comparator<Employee> getSalaryComparator() {
         return Comparator.comparingDouble(Employee::getSalary);
     }

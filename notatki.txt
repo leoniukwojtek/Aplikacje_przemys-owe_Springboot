@@ -6,3 +6,16 @@ przebudowa bez testów: mvn install -DskipTests
 
 
 uruchamianie:  mvn test
+
+
+Kategoria	                Endpoint	                                                    GET/POST/PATCH	        Przeglądarka
+Lista pracowników	        http://localhost:8080/api/employees	                            GET	                    ✅
+Pracownik po e-mailu	    http://localhost:8080/api/employees/{email}	                    GET	                    ✅
+    Dodaj pracownika	    http://localhost:8080/api/employees	                            POST	                ❌
+Usuń pracownika	            http://localhost:8080/api/employees/{email}	                    DELETE	                ❌
+Zmień status	            http://localhost:8080/api/employees/{email}/status	            PATCH	                ❌
+Średnia pensja (wszyscy)	http://localhost:8080/api/statistics/salary/average	            GET	                    ✅
+Średnia pensja (firma)	    http://localhost:8080/api/statistics/salary/average?company=X	GET	                    ✅
+Statystyki firmy	        http://localhost:8080/api/statistics/company/{companyName}	    GET	                    ✅
+Statystyki stanowisk	    http://localhost:8080/api/statistics/positions	                GET	                    ✅
+Statystyki statusów	        http://localhost:8080/api/statistics/status	                    GET	                    ✅
