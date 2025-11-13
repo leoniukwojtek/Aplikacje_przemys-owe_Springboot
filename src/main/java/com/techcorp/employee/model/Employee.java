@@ -13,6 +13,7 @@ public class Employee {
     private String jobTitle;
     private double salary;
     private EmploymentStatus status;
+    private String photoFileName;
 
     // Konstruktor
     public Employee(String firstName, String lastName, String emailAddress,
@@ -46,6 +47,8 @@ public class Employee {
 
     public void setSalary(double salary) { this.salary = salary; }
     public void setStatus(EmploymentStatus status) { this.status = status; }
+    public String getPhotoFileName() { return photoFileName; }
+    public void setPhotoFileName(String photoFileName) { this.photoFileName = photoFileName; }
 
     @Override
     public String toString() { return firstName + " " + lastName; }

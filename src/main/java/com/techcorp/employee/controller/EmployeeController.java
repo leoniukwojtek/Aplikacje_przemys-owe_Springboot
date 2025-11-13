@@ -8,6 +8,7 @@ import com.techcorp.employee.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.net.URI;
 import java.util.List;
@@ -98,4 +99,27 @@ public class EmployeeController {
             throw e; // inne wyjątki → 500
         }
     }
+
+    // ------------------------ IMPORT Z CSV ------------------------
+    @PostMapping("/import")
+    public ResponseEntity<String> importEmployeesFromCsv(@RequestParam("file") MultipartFile file) {
+        try {
+            int importedCount = employeeService.importFromCsv(file);
+            return ResponseEntity.ok("Zaimportowano " + importedCount + " pracowników.");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Błąd importu: " + e.getMessage());
+        }
+    }
+/*
+    @PostMapping("/import/external")
+    public ResponseEntity<String> importEmployeesFromApi() {
+        try {
+            int importedCount = employeeService.importFromExternalApi();
+            return ResponseEntity.ok("Zaimportowano " + importedCount + " pracowników z API.");
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Błąd importu z API: " + e.getMessage());
+        }
+    }
+*/
+
 }

@@ -4,11 +4,14 @@ import com.techcorp.employee.dto.EmployeeDTO;
 import com.techcorp.employee.mapper.EmployeeMapper;
 import com.techcorp.employee.exception.InvalidDataException;
 import com.techcorp.employee.model.*;
+import com.techcorp.employee.util.CsvUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -208,6 +211,22 @@ public class EmployeeService {
                                 .count()
                 ));
     }
+
+
+    public int importFromCsv(MultipartFile file) throws InvalidDataException {
+        List<Employee> importedEmployees = CsvUtils.parseCsv(file); // osobny helper do parsowania
+        int count = 0;
+        for (Employee e : importedEmployees) {
+            try {
+                addEmployee(e);
+                count++;
+            } catch (InvalidDataException ex) {
+                // pomijamy lub logujemy błędne rekordy
+            }
+        }
+        return count;
+    }
+
 
 
 }
