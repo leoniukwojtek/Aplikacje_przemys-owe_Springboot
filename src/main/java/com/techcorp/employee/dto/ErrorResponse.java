@@ -1,11 +1,17 @@
 package com.techcorp.employee.dto;
 
-import java.time.LocalDateTime;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+import com.fasterxml.jackson.databind.deser.std.DateDeserializers;
+
+import java.time.LocalDateTime;
 
 public class ErrorResponse {
     private String message;
 
+    @JsonSerialize(using = ToStringSerializer.class)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime timestamp;
 

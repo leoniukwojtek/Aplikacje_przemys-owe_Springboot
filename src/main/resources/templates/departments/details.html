@@ -1,0 +1,30 @@
+<div xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: body}">
+
+<h1>Szczegóły departamentu</h1>
+
+    <p><strong>Nazwa:</strong> <span th:text="${department.name}"></span></p>
+    <p><strong>Lokalizacja:</strong> <span th:text="${department.location}"></span></p>
+    <p><strong>Budżet:</strong> <span th:text="${department.budget}"></span></p>
+    <p><strong>Manager:</strong> <span th:text="${managerName}"></span></p>
+
+    <h2>Pracownicy w departamencie</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="e : ${employees}">
+            <td th:text="${e.firstName}"></td>
+            <td th:text="${e.lastName}"></td>
+            <td th:text="${e.emailAddress}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>

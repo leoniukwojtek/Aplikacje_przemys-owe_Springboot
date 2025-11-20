@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+    margin: 0;
+}
+
+.navbar {
+    background: #222;
+    padding: 10px;
+}
+
+.navbar a {
+    color: #fff;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+h1, h2 { color: #333; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+table tr:hover {
+    background: #f0f0f0;
+}
+
+.btn {
+    background: #007bff;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.danger {
+    color: red;
+}
+
+.flash {
+    background: #d4ffd4;
+    padding: 10px;
+    border: 1px solid #7ed97e;
+    margin-bottom: 20px;
+}

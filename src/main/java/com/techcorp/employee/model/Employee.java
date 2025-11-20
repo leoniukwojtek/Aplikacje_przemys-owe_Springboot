@@ -14,6 +14,7 @@ public class Employee {
     private double salary;
     private EmploymentStatus status;
     private String photoFileName;
+    private Long departmentId;
 
     // Konstruktor
     public Employee(String firstName, String lastName, String emailAddress,
@@ -77,6 +78,9 @@ public class Employee {
         return Comparator.comparing(Employee::getLastName)
                 .thenComparing(Employee::getFirstName);
     }
+
+    public Long getDepartmentId() { return departmentId; }
+    public void setDepartmentId(Long departmentId) { this.departmentId = departmentId; }
 
     public static Comparator<Employee> getSalaryComparator() {
         return Comparator.comparingDouble(Employee::getSalary);

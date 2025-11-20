@@ -8,7 +8,7 @@ public class EmployeeMapper {
     public static EmployeeDTO toDTO(Employee e) {
         if (e == null) return null;
 
-        return new EmployeeDTO(
+        EmployeeDTO dto = new EmployeeDTO(
                 e.getFirstName(),
                 e.getLastName(),
                 e.getEmailAddress(),
@@ -17,6 +17,11 @@ public class EmployeeMapper {
                 e.getSalary(),
                 e.getStatus()
         );
+
+
+        dto.setDepartmentId(e.getDepartmentId());
+
+         return dto;
     }
 
     public static Employee toEntity(EmployeeDTO dto) {
@@ -30,7 +35,11 @@ public class EmployeeMapper {
                 dto.getPosition(),
                 dto.getSalary()
         );
+
         employee.setStatus(dto.getStatus());
+
+        employee.setDepartmentId(dto.getDepartmentId());
+
         return employee;
     }
 }

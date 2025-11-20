@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Departamentów</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<!-- Korzystamy ze wspólnego layoutu za pomocą th:replace -->
+<div xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: body}">
+
+    <h1>Lista Departamentów</h1>
+
+    <!-- Sprawdź, czy lista departamentów nie jest pusta -->
+    <div th:if="${departments}">
+        <table>
+            <thead>
+            <tr>
+                <th>Nazwa Departamentu</th>
+                <th>Opcje</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Iteracja po departamentach -->
+            <tr th:each="department : ${departments}">
+                <td th:text="${department.name}">Nazwa Departamentu</td>
+                <td>
+                    <!-- Link do szczegółów departamentu -->
+                    <a th:href="@{/departments/{id}(id=${department.id})}">Szczegóły</a>
+                    <!-- Link do edycji departamentu -->
+                    <a th:href="@{/departments/edit/{id}(id=${department.id})}">Edytuj</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Jeśli lista departamentów jest pusta -->
+    <!--    <div th:if="${departments == null or #lists.isEmpty(departments) == true}">     -->
+        <div th:if true}>
+        <p>Brak dostępnych departamentów.</p>
+    </div>
+
+
+    <!-- Link do dodania nowego departamentu -->
+    <a href="/departments/new">Dodaj Departament</a>
+
+</div>
+</body>
+</html>

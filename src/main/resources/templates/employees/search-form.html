@@ -1,0 +1,12 @@
+<div xmlns:th="http://www.thymeleaf.org" th:replace="layout :: body">
+
+
+<h1>Wyszukaj pracowników po firmie</h1>
+
+    <form th:action="@{/employees/search}" method="post">
+        <label>Firma:</label>
+        <input name="company" required>
+        <button type="submit" class="btn">Szukaj</button>
+    </form>
+
+</div>

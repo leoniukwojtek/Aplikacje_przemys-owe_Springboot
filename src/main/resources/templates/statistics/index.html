@@ -1,0 +1,33 @@
+<div xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: body}">
+
+<h1>Statystyki</h1>
+
+    <h2>Ogólne</h2>
+    <ul>
+        <li>Liczba pracowników: <span th:text="${employeeCount}"></span></li>
+        <li>Średnie wynagrodzenie: <span th:text="${averageSalary}"></span></li>
+        <li>Liczba departamentów: <span th:text="${departmentCount}"></span></li>
+    </ul>
+
+    <h2>Statystyki firm</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Firma</th>
+            <th>Liczba</th>
+            <th>Średnia</th>
+            <th>Max</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="s : ${companyStats}">
+            <td th:text="${s.key}"></td>
+            <td th:text="${s.value.count}"></td>
+            <td th:text="${s.value.averageSalary}"></td>
+            <td th:text="${s.value.maxSalary}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>

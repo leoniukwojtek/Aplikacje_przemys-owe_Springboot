@@ -1,0 +1,30 @@
+<div xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: body}">
+
+
+<h1>Dodaj / edytuj departament</h1>
+
+    <form th:action="@{/departments/add}" th:object="${department}" method="post">
+
+        <label>Nazwa:</label>
+        <input th:field="*{name}" required>
+
+        <label>Lokalizacja:</label>
+        <input th:field="*{location}" required>
+
+        <label>Budżet:</label>
+        <input type="number" step="0.01" th:field="*{budget}" required>
+
+        <label>Manager:</label>
+        <select th:field="*{managerEmail}">
+            <option th:each="m : ${managers}"
+                    th:value="${m.emailAddress}"
+                    th:text="${m.firstName + ' ' + m.lastName}">
+            </option>
+        </select>
+
+        <button class="btn" type="submit">Zapisz</button>
+    </form>
+
+</div>
+
+

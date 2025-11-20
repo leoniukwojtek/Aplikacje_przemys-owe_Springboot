@@ -4,8 +4,16 @@ uruchamianie: mvn spring-boot:run
 
 przebudowa bez testów: mvn install -DskipTests
 
-
 uruchamianie:  mvn test
+
+Zad 7)
+    http://localhost:8080/ - strona główna
+    http://localhost:8080/employees - lista pracowników
+    http://localhost:8080/employees/add - formularz dodawania
+    http://localhost:8080/departments - lista departamentów
+    http://localhost:8080/statistics - dashboard statystyk
+    http://localhost:8080/employees/import - formularz importu plików
+
 
 
 Kategoria	                Endpoint	                                                    GET/POST/PATCH	        Przeglądarka
@@ -19,3 +27,57 @@ Zmień status	            http://localhost:8080/api/employees/{email}/status	   
 Statystyki firmy	        http://localhost:8080/api/statistics/company/{companyName}	    GET	                    ✅
 Statystyki stanowisk	    http://localhost:8080/api/statistics/positions	                GET	                    ✅
 Statystyki statusów	        http://localhost:8080/api/statistics/status	                    GET	                    ✅
+
+
+
+curl -X GET "http://localhost:8080/api/files/documents/jan.kowalski@firma.pl"
+
+curl -X POST "http://localhost:8080/api/files/import/xml" \
+  -F "file=@/ścieżka/do/pracownicy.xml"
+
+
+
+
+  POST    /api/files/documents/{email}
+  GET     /api/files/documents/{email}
+  GET     /api/files/documents/{email}/{id}
+  DELETE  /api/files/documents/{email}/{id}
+
+  POST    /api/files/import/csv
+  POST    /api/files/import/xml
+
+  GET     /api/files/export/csv
+  GET     /api/files/reports/statistics/{companyName}
+
+
+  # Upload dokumentu pracownika
+  curl -X POST "http://localhost:8080/api/files/documents/jan.kowalski@example.com" \
+       -H "Content-Type: multipart/form-data" \
+       -F "file=@/ścieżka/do/pliku.pdf"
+
+  # Pobranie listy dokumentów pracownika
+  curl -X GET "http://localhost:8080/api/files/documents/jan.kowalski@example.com"
+
+  # Pobranie konkretnego dokumentu
+  curl -X GET "http://localhost:8080/api/files/documents/jan.kowalski@example.com/123" \
+       -o dokument.pdf
+
+  # Usunięcie dokumentu pracownika
+  curl -X DELETE "http://localhost:8080/api/files/documents/jan.kowalski@example.com/123"
+
+  # Import pracowników z pliku CSV
+  curl -X POST "http://localhost:8080/api/files/import/csv" \
+       -H "Content-Type: multipart/form-data" \
+       -F "file=@/ścieżka/do/pracownicy.csv"
+
+  # Import pracowników z pliku XML
+  curl -X POST "http://localhost:8080/api/files/import/xml" \
+       -H "Content-Type: multipart/form-data" \
+       -F "file=@/ścieżka/do/pracownicy.xml"
+
+  # Eksport pracowników do pliku CSV (opcjonalnie z parametrem company)
+  curl -X GET "http://localhost:8080/api/files/export/csv?company=FirmaX" \
+       -o pracownicy.csv
+
+  # Generowanie raportu PDF dla firmy
+  curl -X GET "http://localhost:8080/api/files/reports/statistics/TechCorp" -o raport.pdf

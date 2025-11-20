@@ -11,6 +11,7 @@ public class EmployeeDTO {
     private String position;
     private double salary;
     private EmploymentStatus status;
+    private Long departmentId;
 
     public EmployeeDTO() { }
 
@@ -40,6 +41,8 @@ public class EmployeeDTO {
     public void setSalary(double salary) { this.salary = salary; }
     public EmploymentStatus getStatus() { return status; }
     public void setStatus(EmploymentStatus status) { this.status = status; }
+    public Long getDepartmentId() { return departmentId;}
+    public void setDepartmentId(Long departmentId) {this.departmentId = departmentId;}
 
     @Override
     public String toString() {

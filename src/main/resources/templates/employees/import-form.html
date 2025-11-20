@@ -1,0 +1,20 @@
+<div xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: body}">
+
+
+<h1>Import pracowników</h1>
+
+    <form th:action="@{/employees/import}" method="post" enctype="multipart/form-data">
+
+        <label>Plik:</label>
+        <input type="file" name="file" required>
+
+        <label>Typ pliku:</label>
+        <select name="fileType">
+            <option value="csv">CSV</option>
+            <option value="xml">XML</option>
+        </select>
+
+        <button class="btn" type="submit">Importuj</button>
+    </form>
+
+</div>

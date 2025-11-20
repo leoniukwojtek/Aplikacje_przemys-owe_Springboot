@@ -1,0 +1,42 @@
+<div xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: body}">
+
+    <h1>Szczegóły pracownika</h1>
+
+    <a class="btn" th:href="@{/employees}">⬅ Powrót do listy</a>
+
+    <div class="card">
+        <h2 th:text="${employee.firstName} + ' ' + ${employee.lastName}">Employee Name</h2>
+
+        <div class="row">
+            <span class="label">Email:</span>
+            <span th:text="${employee.emailAddress}"></span>
+        </div>
+
+        <div class="row">
+            <span class="label">Firma:</span>
+            <span th:text="${employee.companyName}"></span>
+        </div>
+
+        <div class="row">
+            <span class="label">Stanowisko:</span>
+            <span th:text="${employee.jobTitle}"></span>
+        </div>
+
+        <div class="row">
+            <span class="label">Wynagrodzenie:</span>
+            <span th:text="${employee.salary} + ' PLN'"></span>
+        </div>
+
+        <div class="row">
+            <span class="label">Status:</span>
+            <span th:text="${employee.status}"></span>
+        </div>
+
+        <div class="row">
+            <span class="label">ID działu:</span>
+            <span th:text="${employee.departmentId}"></span>
+        </div>
+    </div>
+
+
+</div>

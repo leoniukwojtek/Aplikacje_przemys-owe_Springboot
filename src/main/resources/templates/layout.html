@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+<h1>System zarządzania pracownikami</h1>
+<nav class="navbar">
+    <a th:href="@{/}">🏠 Home</a>
+    <a th:href="@{/employees}">👥 Pracownicy</a>
+    <a th:href="@{/departments}">🏢 Departamenty</a>
+    <a th:href="@{/statistics}">📊 Statystyki</a>
+</nav>
+
+<div class="container">
+
+    <div th:if="${message}" class="flash">
+        <p th:text="${message}"></p>
+    </div>
+
+
+    <div th:fragment="body">
+        <!-- widoki będą wstawiane tutaj -->
+    </div>
+
+</div>
+
+</body>
+</html>

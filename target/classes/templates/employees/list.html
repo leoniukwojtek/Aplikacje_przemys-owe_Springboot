@@ -1,0 +1,38 @@
+<div xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: body}">
+
+
+<h1>Lista pracowników</h1>
+
+    <a class="btn" th:href="@{/employees/add}">➕ Dodaj pracownika</a>
+    <a class="btn" th:href="@{/employees/search}">🔍 Szukaj</a>
+    <a class="btn" th:href="@{/employees/import}">📥 Import CSV/XML</a>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Email</th>
+            <th>Firma</th>
+            <th>Stanowisko</th>
+            <th>Akcje</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="e : ${employees}">
+            <td th:text="${e.firstName}"></td>
+            <td th:text="${e.lastName}"></td>
+            <td th:text="${e.emailAddress}"></td>
+            <td th:text="${e.companyName}"></td>
+            <td th:text="${e.jobTitle}"></td>
+
+            <td>
+                <a th:href="@{/employees/edit/{email}(email=${e.emailAddress})}">✏ Edytuj</a>
+                <a class="danger" th:href="@{/employees/delete/{email}(email=${e.emailAddress})}">🗑 Usuń</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
